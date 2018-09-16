@@ -1,4 +1,7 @@
 // Adder circuit
+`define AND and #50
+`define OR or #50
+`define XOR xor #50
 
 module behavioralFullAdder
 (
@@ -23,16 +26,16 @@ module structuralFullAdder
 
 	wire axb, axbxc, ab, bc, ac, abc, abubc; 
 
-	xor axb_(axb, a, b);
-	xor axbxc_(axbxc, axb, c);
+	`XOR axb_(axb, a, b);
+	`XOR axbxc_(axbxc, axb, c);
 
-	and ab_(ab, a, b);
-	and ac_(ac, a, c);
-	and bc_(bc, b, c);
-	and abc_(abc, ab, c);
+	`AND ab_(ab, a, b);
+	`AND ac_(ac, a, c);
+	`AND bc_(bc, b, c);
+	`AND abc_(abc, ab, c);
 
-	or sum_(sum, axbxc, abc);
+	`OR sum_(sum, axbxc, abc);
 
-	or abubc_(abubc, ab, bc);
-	or carryout_(carryout, abubc, ac);
+	`OR abubc_(abubc, ab, bc);
+	`OR carryout_(carryout, abubc, ac);
 endmodule

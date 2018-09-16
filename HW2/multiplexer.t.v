@@ -6,7 +6,8 @@ module testMultiplexer ();
 	reg i1, i2, i3, i4, a1, a2; // indexed from 1.  fight me
 	wire out;
 
-	behavioralMultiplexer mux(out, a1, a2, i1, i2, i3, i4);
+	//behavioralMultiplexer mux(out, a1, a2, i1, i2, i3, i4);
+	structuralMultiplexer mux(out, a1, a2, i1, i2, i3, i4);
 
 	initial begin
 		$display("i1 i2 i3 i4 | a1 a2 | out | expected out");

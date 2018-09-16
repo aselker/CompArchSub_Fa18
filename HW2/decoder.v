@@ -1,4 +1,6 @@
 // Decoder circuit
+`define NOT not #50
+`define AND and #50
 
 module behavioralDecoder
 (
@@ -20,17 +22,17 @@ module structuralDecoder
 	wire na0, na1;
 	wire a0int, a1int, a2int, a3int;
 
-	not n_a0(na0, a0);
-	not n_a1(na1, a1);
+	`NOT n_a0(na0, a0);
+	`NOT n_a1(na1, a1);
 	
-	and o0_and(o0int, na0, na1);
-	and o1_and(o1int, a0, na1);
-	and o2_and(o2int, na0, a1);
-	and o3_and(o3int, a0, a1);
+	`AND o0_and(o0int, na0, na1);
+	`AND o1_and(o1int, a0, na1);
+	`AND o2_and(o2int, na0, a1);
+	`AND o3_and(o3int, a0, a1);
 
-	and o0_and2(o0, o0int, e);
-	and o1_and2(o1, o1int, e);
-	and o2_and2(o2, o2int, e);
-	and o3_and2(o3, o3int, e);
+	`AND o0_and2(o0, o0int, e);
+	`AND o1_and2(o1, o1int, e);
+	`AND o2_and2(o2, o2int, e);
+	`AND o3_and2(o3, o3int, e);
 
 endmodule
