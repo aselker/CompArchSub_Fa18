@@ -1,0 +1,29 @@
+Mulitplexer:
+i1 i2 i3 i4 | a1 a2 | out | expected out
+0  0  0  0  | 0  0  |  0  |           0
+1  0  0  0  | 0  0  |  1  |           1
+0  1  0  0  | 1  0  |  1  |           1
+0  0  1  0  | 0  1  |  1  |           1
+0  0  0  1  | 1  1  |  1  |           1
+
+Adder:
+a b cIn | sum cOut | expected sum cOut
+0 0  0  |  0   0   |           0   0
+0 0  1  |  1   0   |           1   0
+0 1  0  |  1   0   |           1   0
+0 1  1  |  0   1   |           0   1
+1 0  0  |  1   0   |           1   0
+1 0  1  |  0   1   |           0   1
+1 1  0  |  0   1   |           0   1
+1 1  1  |  1   1   |           1   1
+
+Decoder:
+En A0 A1| O0 O1 O2 O3 | Expected Output
+0  0  0 |  0  0  0  0 | All false
+0  1  0 |  0  0  0  0 | All false
+0  0  1 |  0  0  0  0 | All false
+0  1  1 |  0  0  0  0 | All false
+1  0  0 |  1  0  0  0 | O0 Only
+1  1  0 |  0  1  0  0 | O1 Only
+1  0  1 |  0  0  1  0 | O2 Only
+1  1  1 |  0  0  0  1 | O3 Only

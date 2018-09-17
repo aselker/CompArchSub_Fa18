@@ -23,4 +23,9 @@ module testMultiplexer ();
 		$display("%b  %b  %b  %b  | %b  %b  |  %b  |           1", i1, i2, i3, i4, a1, a2, out);
 	end
 
+		initial begin
+			$dumpfile("mux.vcd");
+			$dumpvars(0, testMultiplexer);
+		end
+
 endmodule
